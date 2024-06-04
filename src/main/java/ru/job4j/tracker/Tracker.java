@@ -53,13 +53,11 @@ public class Tracker {
 
     public void delete(int id) {
         int index = indexOf(id);
-        boolean result = index == -1;
-        if (result) {
-            return;
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, size - index + 1);
+            items[size - 1] = null;
+            size--;
         }
-        System.arraycopy(items, index + 1, items, index, size - index + 1);
-        items[size - 1] = null;
-        size--;
     }
 
     public Item findById(int id) {
