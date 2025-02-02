@@ -25,8 +25,8 @@ public class SingleTracker {
         return tracker.replace(id, item);
     }
 
-    public void delete(int id) {
-
+    public boolean delete(int id) {
+       return tracker.delete(id);
     }
 
     public Item[] findAll() {
